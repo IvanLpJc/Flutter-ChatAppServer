@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocketServer</title>
+</head>
+
+<body>
+    <h1>Denied access</h1>
+    <!-- This is the neccessary configuration for the sockets -->
+    <script src="socket.io/socket.io.js"></script>
+    <script>
+        // This script does the connection to the socket server
+        let socket = io(); // This is in the previous script library load
+        socket.on('connect', () => console.log("Connection established with server"));
+        socket.on('disconnect', () => console.log("Connection disconnected for server"));
+        socket.emit('message', { nombre: "Iván" })
+        socket.on('message', (payload) => console.log(payload));
+    </script>
+</body>
+
+</html>
