@@ -14,10 +14,15 @@
     <script>
         // This script does the connection to the socket server
         let socket = io(); // This is in the previous script library load
-        socket.on('connect', () => console.log("Connection established with server"));
-        socket.on('disconnect', () => console.log("Connection disconnected for server"));
+        socket.on('connect', () => console.log("Web connection established with server"));
+        socket.on('disconnect', () => console.log("Web connection disconnected for server"));
         socket.emit('message', { nombre: "Iván" })
-        socket.on('message', (payload) => console.log(payload));
+        socket.emit('emited_message', { "device": "web", "nombre": "Iván", "msg": "Hola" })
+        socket.on('emited_message', (payload) => console.log(payload));
+        socket.on('active_bands', (payload) => {
+            console.clear();
+            console.table(payload)
+        });
     </script>
 </body>
 
