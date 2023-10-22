@@ -1,8 +1,10 @@
-# Band Names Server
+# Chat App Server
 
 Server made in NodeJs as part of the Udemy course [Flutter Avanzado: Lleva tu conocimiento al siguiente nivel](https://www.udemy.com/course/flutter-avanzado-fernando-herrera/) (Advanced Flutter: Bring your knowledge to the next level).
 
-This server will be used as backend for the [Band Names App](https://github.com/IvanLpJc/Flutter-BandNamesApp/tree/main) developed in Flutter.
+This server will be used as backend for the [Chat App](https://github.com/IvanLpJc/Flutter-ChatApp) developed in Flutter.
+
+The starting point of this server is the server made for a previous section of the course: [Band Names Server](https://github.com/IvanLpJc/NodeJs-BandNamesServer).
 
 ## Packages Used
 - [dotenv](https://www.npmjs.com/package/dotenv): For environments configurations.
@@ -12,9 +14,3 @@ This server will be used as backend for the [Band Names App](https://github.com/
 - [uuid](https://www.npmjs.com/package/uuid): For the creation of [RFC4122](https://www.ietf.org/rfc/rfc4122.txt) UUIDs
 
 ## Models Used
-- Band:
-    - id: uuidV4 identifier.
-    - name: Name of the band.
-    - votes: Name of votes.
-- Bands:
-    - bands: List of bands.
