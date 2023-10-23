@@ -21,6 +21,10 @@
             "args": [
                 "${workspaceRoot}/index.js"
             ],
+            "env":
+            {
+                "NODE_ENV": "development"
+            },
             "runtimeArgs": [
                 "--nolazy"
             ]
