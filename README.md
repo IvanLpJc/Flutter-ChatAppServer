@@ -20,3 +20,10 @@ The starting point of this server is the server made for a previous section of t
 - [mongoose](https://www.npmjs.com/package/mongoose): Mongoose is a [MongoDB](https://www.mongodb.com/es) object modeling tool designed to work in an asynchronous environment. Mongoose supports [Node.js](https://nodejs.org/en) and [Deno](https://deno.com/) (alpha).
 
 ## Models Used
+
+#### User
+
+- name
+- email
+- password
+- online
