@@ -1,5 +1,4 @@
 const { io } = require('../index.js');
-console.log(bands);
 
 // Socket messaging
 io.on('connect', client => {
