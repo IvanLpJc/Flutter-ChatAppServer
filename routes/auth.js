@@ -3,8 +3,9 @@
 */
 
 const { Router } = require('express');
-const { check } = require('express-validator');
-const { createUser } = require('../controllers/auth');
+const { createUser, loginUser, renewToken } = require('../controllers/auth');
+const { loginValidator, signUpValidator, validateFields } = require('../middlewares/validate-fields');
+const { validateJWT } = require('../middlewares/validate-jwt');
 
 const router = Router();
 
@@ -19,10 +20,15 @@ const router = Router();
     - not().isEmpty() check that it's not empty 
 
 */
-router.post('/create_user',[check('name', 'Name is mandatory').not().isEmpty()],createUser );
+router.post('/create_user', signUpValidator, [
+    validateFields,
+],createUser );
 
+// post: /
+// validar email y password 
+router.post('/', loginValidator, [validateFields], loginUser);
 
-
+router.get('/renew_token', validateJWT, renewToken);
 
 
 
